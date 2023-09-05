@@ -1,0 +1,73 @@
+set nu
+set relativenumber
+set incsearch
+set scrolloff=8
+
+" Plugins
+Plug 'preservim/nerdtree'
+Plug 'machakann/vim-highlightedyank'
+
+" Leader
+let mapleader = " "
+noremap <Space> <Nop>
+
+" Tabbing
+nnoremap <S-l> gt
+vnoremap <S-l> gt
+nnoremap <S-h> gT
+vnoremap <S-h> gT
+
+" Clipboard buffer
+nnoremap <leader>d "*d
+nnoremap <leader>D "*dd
+nnoremap <leader>y "*y
+nnoremap <leader>Y "*yy
+nnoremap <leader>p "*p
+vnoremap <leader>d "*d
+vnoremap <leader>D "*dd
+vnoremap <leader>y "*y
+vnoremap <leader>Y "*yy
+vnoremap <leader>p "*p
+
+" Terminal
+nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
+
+" Quality of life
+nnoremap <leader>s "ayiw :%s/\<<C-r>a\>/<C-r>a/gI<Left><Left><Left>
+nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>= :action ReformatCode<CR>
+nnoremap <leader>q :wq<CR>
+nnoremap <leader>Q :tabo<CR>
+nnoremap <C-d> <C-d>zz
+nnoremap <C-o> <C-o>zz
+nnoremap <C-i> <C-i>zz
+nnoremap <C-u> <C-u>zz
+
+" Commenting
+nnoremap gc :action CommentByLineComment<CR>
+vnoremap gc :action CommentByLineComment<CR>
+
+" Documentation
+nnoremap <C-k> :action QuickJavaDoc<CR>
+
+" Navigation
+nnoremap <leader>fr :action RecentFiles<CR>
+nnoremap <leader>fg :action GotoFile<CR>
+nnoremap <leader>fi :action FindInPath<CR>
+nnoremap <leader>ff :action Find<CR>
+nnoremap <leader>e :NERDTreeFocus<CR>
+
+" Code completion
+inoremap <C-y> :action EditorChooseLookupItem<CR>
+
+" Goto
+nnoremap gr :action ShowUsages<CR>
+nnoremap gi :action ReSharperGotoImplementation<CR>
+nnoremap gd :action GotToDeclaration<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gD :action GotoTypeDeclaration<CR>
+nnoremap [g :action GotoPreviousError<CR>
+nnoremap ]g :action GotoNextError<CR>
+
+" Debugger
+nnoremap <leader>b :action ToggleLineBreakpoint<CR>
